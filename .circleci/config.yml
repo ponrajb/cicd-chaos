@@ -51,13 +51,6 @@ workflows:
       - chaos_exper1:
           requires:
             - exec_exper1
-      - exec_exper2:
-          type: approval
-          requires:
-            - chaos_exper1
-      - chaos_exper2:
-          requires:
-            - exec_exper2
       - exec_exper3:
           type: approval
           requires:
