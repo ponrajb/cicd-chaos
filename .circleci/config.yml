@@ -30,6 +30,16 @@ jobs:
           command: |
             cd chaos-experiments/
             ./experiment2.sh ${GREMLIN_TEAM_ID} ${GREMLIN_API_KEY} ${USER_NAME}
+  chaos_exper3:
+    docker:
+      - image: ariv3ra/terraform-gcp:tf-v0.13.3
+    steps:
+      - checkout
+      - run:
+          name: "Chaos Experiment #3 - Latency example"
+          command: |
+            cd chaos-experiments/
+            ./experiment3.sh ${GREMLIN_TEAM_ID} ${GREMLIN_API_KEY} ${USER_NAME}
 workflows:
   deploy_chaos:
     jobs:
