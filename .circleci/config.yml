@@ -44,13 +44,6 @@ workflows:
   deploy_chaos:
     jobs:
       - deploy_cicd_app
-      - exec_exper1:
-          type: approval
-          requires:
-            - deploy_cicd_app      
-      - chaos_exper1:
-          requires:
-            - exec_exper1
       - exec_exper3:
           type: approval
           requires:
