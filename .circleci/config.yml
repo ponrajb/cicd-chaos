@@ -61,7 +61,7 @@ workflows:
       - exec_exper3:
           type: approval
           requires:
-              - chaos_exper2
+            - deploy_cicd_app
       - chaos_exper3:
           requires:
-              - exec_exper3
+            - exec_exper3
